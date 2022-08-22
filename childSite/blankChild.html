@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>抱歉</title>
+    <style>
+        body {
+            background-image: url(../img/pexels-asad-photo-maldives-457881.jpg);
+            background-repeat: no-repeat;
+            background-size: 100%;
+        }
+
+        .warp {
+            height: 300px;
+            width: 300px;
+            /* background-color: red; */
+            margin: 100px auto;
+            text-align: center;
+            border: 1px solid black;
+            background-color: rgba(127, 234, 255, 0.285);
+        }
+
+        .warp a {
+            width: auto;
+            padding: 10px;
+            text-decoration: none;
+            background-color: #11659a;
+            color: #fff;
+            border-radius: 15px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="warp">
+        <p>页面发生错误!</p>
+        <p>是否回到上一个页面</p>
+        <p>5秒后自动返回</p>
+        <a href="javascript:;" id="btn01">上一个页面</a>
+    </div>
+    <script>
+        var btn01 = document.getElementById("btn01");
+        btn01.onclick = function () {
+            history.back();
+
+        }
+
+        var timer;
+        timer = setTimeout(function () {
+            history.back();
+        }, 5000);
+        timer();
+        var clearTimer;
+        clearTimer = setTimeout(function () {
+            clearTimeout(timer);
+        }, 6000)
+
+    </script>
+</body>
+
+</html>
